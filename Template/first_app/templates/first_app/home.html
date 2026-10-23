@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template_Filtering</title>
+  </head>
+  <body>
+    <h2>This home page from app</h2>
+
+    <h1>Name :{{name}}</h1>
+    <h1>Name :{{age}}</h1>
+
+    <!-- Conditional Statements -->
+
+    {% if age >= 18 %}
+    <h3>You can vote</h3>
+    {% elif age < 18%}
+    <h3>You cannot vote</h3>
+    {% else %}
+    <h3>Wrong Information</h3>
+    {% endif%}
+
+    <!-- For Loop -->
+
+    <h1>Course details</h1>
+    {% for i in courses %}
+    <h2>{{i.id}} {{i.c_name}} {{i.fee}}</h2>
+    {%endfor%}
+  </body>
+</html>
