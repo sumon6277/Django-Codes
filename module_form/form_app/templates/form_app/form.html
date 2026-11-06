@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+
+{% block title %} Form Page {% endblock %}
+
+{% block body %}
+
+<a href="{% url 'home' %}">App Home</a>
+<br />
+<a href="{% url 'about' %}">App About</a>
+<br />
+<a href="{% url 'contact' %}">App Contact</a>
+<br />
+<a href="{% url 'main_home' %}">Main Home</a>
+
+<h1>App Form Page</h1>
+
+<form method="post" action="">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputName" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailName"
+      name = "username"
+    />
+    <br>
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      name = "email"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h2>
+    {{name}}
+</h2>
+<h2>{{email}}</h2>
+{% endblock %}
